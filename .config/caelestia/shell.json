@@ -1,1 +1,34 @@
-
+{
+  "general": {
+    "apps": {
+      "explorer": [
+        "dolphin"
+      ],
+      "terminal": [
+        "kitty"
+      ]
+    }
+  },
+  "services": {
+        "clockFormat": "TwelveHour",
+        "weatherLocation": "Alcorcón",
+        "weatherUnits": "Celsius"
+  },
+  "session": {
+    "commands": {
+      "logout": [
+        "hyprctl",
+        "dispatch",
+        "hl.dsp.exit()"
+      ]
+    }
+  },
+  "paths": {
+    "wallpaperDir": "~/Pictures/Wallpapers",
+    "lyricsDir": "~/Music/lyrics/",
+    "sessionGif": "~/.config/caelestia/assets/g13.gif",
+    "mediaGif": "root:/assets/bongocat.gif",
+    "noNotifsPic": "root:/assets/dino.png",
+    "lockNoNotifsPic": "root:/assets/dino.png"
+  }
+}
