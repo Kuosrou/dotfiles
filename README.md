@@ -1,1 +1,5 @@
-# dotfiles
+# Dotfiles
+
+Mi configuración de **Arch**.
+
+---
