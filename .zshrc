@@ -197,7 +197,7 @@ export FZF_DEFAULT_OPTS='
   --color=info:#06BCE4,border:#06BCE4,prompt:#2CF9ED,pointer:#2CF9ED
   --color=marker:#2CF9ED,spinner:#2CF9ED,header:#2CF9ED
   --bind="ctrl-/:toggle-preview"
-  --bind="ctrl-y:execute-silent(wl-copy < {+f})+abort"
+  --bind="ctrl-y:execute-silent(if realpath -esz -- {+} >/dev/null 2>&1; then realpath -esz -- {+} | xargs -0 ls -dpU --; else cat {+f}; fi | wl-copy -n)+abort"
 '
 
 # fd como motor de búsqueda
@@ -247,11 +247,11 @@ fcd() {
   cd "$dir" && ls
 }
 
-# f: elegir uno o varios archivos (Tab marca) y copiar sus rutas al portapapeles (Wayland)
+# f: elegir uno o varios archivos (Tab marca) y copiar sus rutas absolutas al portapapeles
 f() {
   local out
   out=$(fzf --multi --preview "$_FZF_PREVIEW_CMD") || return
-  printf '%s' "$out" | wl-copy
+  realpath -sz -- "${(@f)out}" | xargs -0 ls -dpU -- | wl-copy -n
 }
 
 # fgb: elegir una rama de git y cambiar a ella
