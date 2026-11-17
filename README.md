@@ -76,7 +76,6 @@ sudo pacman -S --needed ttf-jetbrains-mono-nerd
 | Zsh | `Ctrl+Z` | Con la línea vacía, recupera el trabajo suspendido (`fg`); con texto, lo aparta y te lo devuelve tras el siguiente comando |
 | Zsh | `↑` / `↓` | Buscar en el historial |
 | Zsh | `Ctrl+←` / `Ctrl+→` | Saltar de palabra en palabra |
-| Zsh | `Supr` | Borrar el carácter siguiente |
 | fzf | `Ctrl+T` | Elegir archivos (preview con `bat`) |
 | fzf | `Alt+C` | Entrar en un directorio (preview con `eza`) |
 | fzf | `Ctrl+R` | Buscar en el historial (`Ctrl+/` muestra el comando completo) |
